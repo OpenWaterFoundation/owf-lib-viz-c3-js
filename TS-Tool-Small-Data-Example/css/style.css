@@ -1,0 +1,14 @@
+.c3 svg {	/* Increase size of ticks, labels, etc. */
+	font-size: 12px;
+	font-family: sans-serif;
+}
+
+.c3-title {	/* Increase Font Size of Title */
+	font-size: 25px;
+	font-family: sans-serif;
+}
+
+p {
+	text-align: center;
+	font-weight: bold;
+}

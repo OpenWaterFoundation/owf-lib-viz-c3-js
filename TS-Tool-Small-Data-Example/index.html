@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>C3 TS Tool Small Data Example</title>
+	<!-- CSS -->
+	<link href="css/c3.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<!-- Javascript -->
+	<script src="javascript/d3.min.js"></script>
+	<script src="javascript/c3.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+
+<body>
+	<div id="chart"></div>
+	<p>In order to zoom in and out scroll the mouse wheel.</p>
+	<script>
+	var chart = c3.generate({
+		data: {
+			x: 'Date',	// Specify the key of x values in the data (what is the title of the x values)
+			xFormat: '%m/%d/%Y',	// Set a format to parse string specified as x.
+			url: 'data-files/small-precip-data.csv',	// Load a CSV or JSON file from a URL or file path from local machine.
+			type: 'line'	// Set chart type of data (line, bar, step, area, etc.).
+		},
+		axis: {
+			x: {
+				label: {
+					text: 'Date',	// X-Axis Label
+					position: 'outer-center'	// X-Axis Label Position
+				},
+				type: 'timeseries',	// Set type of X Axis 
+				tick: {
+					format: '%Y-%m-%d'	// A funciton to format tick values. 
+				}
+			},
+			y: {
+				label: {
+					text: 'inches',	// Y-Axis Label
+					position: 'outer-middle'	// Y-Axis Label Position
+				} 
+			}
+		},
+		zoom: {
+			enabled: true	// Enable zooming
+		},
+		subchart: {
+			show: true	// Enable subchart
+		},
+		title: {
+			text: 'Precipitation'	// Title of Chart/Graph
+		},
+		tooltip: {		// Function that is called when tooltip is shown. This will make sure the tooltip doesn't overlap data when being shown.
+		    position: function(data, width, height, thisElement) {
+		      var containerWidth, element, tooltipWidth, x, y;
+		      element = document.getElementById('chart');
+		      containerWidth = element.clientWidth;
+		      tooltipWidth = element.querySelector('.c3-tooltip-container').clientWidth;
+		      x = parseInt(thisElement.getAttribute('x'));
+		      if (x + tooltipWidth > containerWidth) {
+		        x = containerWidth - tooltipWidth - 2;
+		      }
+		      y = thisElement.getAttribute('y');
+		      y = y - height;
+		      y *= -2;
+		      return {
+		        top: y,
+		        left: x
+		      };
+    		}
+ 		 }
+	});
+	</script>
+</body>
+</html>

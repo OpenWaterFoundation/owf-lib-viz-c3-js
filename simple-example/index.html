@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>C3 Simple Example</title>
+	<!-- CSS -->
+	<link href="css/c3.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<!-- Javascript -->
+	<script src="javascript/d3.min.js"></script>
+	<script src="javascript/c3.min.js"></script>
+</head>
+
+<body>
+	<!-- Element that the chart will be bound too -->
+	<div id="chart"></div>
+	<p>In order to zoom in and out scroll the mouse wheel.</p>
+	<script>
+		// Generate Chart
+		var chart = c3.generate({
+			bindto: "#chart", // option that declares what element to bind to
+			color: {
+				pattern: ['#000000','#4286F4','#FF0000']	// Set custom color pattern for each series/line
+			},
+			data: {
+				
+				// url: '', // Load a CSV or JSON file from a URL and or File Path.
+				// json: [], // Parse a JSON object for data
+				rows: [	// Load data from a multidimensional array. First element/row contains the data names
+				  ['Series 1', 'Series 2', 'Series 3'],
+				  [90, 120, 300],
+				  [40, 160, 240],
+				  [50, 200, 290],
+				  [120, "null", 230],
+				  [80, 130, 300],
+				  [90, 220, 320],
+				  [110,160,330],
+				],
+				empty: {	// Set text displayed when there is empty/no data. Only shows for a breif moment during load
+					label: {
+						text: "N/A"
+					}
+				},
+				// columns: [	// Load data from a multidimensional array. 
+				// 			// Each element contains an array consisting of a datum name and associated data values.
+				// 	['data1', 30, 20, 50, 40, 60, 50],
+				// 	['data2', 200, 130, 90, 240, 130, 220],
+				// 	['data3', 300, 200, 160, 400, 250, 250]
+				// ]
+			},
+			grid: {		// Show both x and y grids 
+				x: {
+					show: true
+				},
+				y: {
+					show: true
+				}
+			},
+			axis: {
+				x: {
+					label: {
+						text: "X-AXIS",	// X-Axis label 
+						position: 'outer-center'	// X-Axis label position
+					}
+				},
+				y: {
+					label: {
+						text: "Y-AXIS",	// Y-Axis label
+						position: 'outer-middle'	// Y-Axis label position
+					}
+				}
+			},
+			zoom: {
+				enabled: true,	// Enable zooming
+				rescale: true	// Enable to rescale Y-Axis after zooming
+			},
+			title: {	// Title of Graph/Chart
+				text: 'Simple Chart Example'
+			},
+		});
+	</script>	
+</body>
+</html>

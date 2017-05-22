@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>C3 TS Tool Large Data Example</title>
+	<!-- CSS -->
+	<link href="css/c3.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<!-- Javascript -->
+	<script src="javascript/d3.min.js"></script>
+	<script src="javascript/c3.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+
+<body>
+	<div id="chart"></div>
+	<p>In order to zoom in and out scroll the mouse wheel.</p>
+	<script>
+	var chart = c3.generate({
+		data: {
+			x: 'Date',
+			xFormat: '%Y-%m-%d',
+			url: 'data-files/data.csv',
+			type: 'line'
+		},
+		axis: {
+			x: {
+				label: {
+					text: 'Date',
+					position: 'outer-center'
+				},
+				type: 'timeseries',
+				tick: {
+					format: '%Y-%m-%d'
+				}
+			},
+			y: {
+				label: {
+					text: 'inches',
+					position: 'outer-middle'
+				} 
+			}
+		},
+		zoom: {
+			enabled: true
+		},
+		subchart: {
+			show: true
+		},
+		title: {
+			text: 'Precipitation'
+		},
+		tooltip: {
+		    position: function(data, width, height, thisElement) {
+		      var containerWidth, element, tooltipWidth, x, y;
+		      element = document.getElementById('chart');
+		      containerWidth = element.clientWidth;
+		      tooltipWidth = element.querySelector('.c3-tooltip-container').clientWidth;
+		      x = parseInt(thisElement.getAttribute('x'));
+		      if (x + tooltipWidth > containerWidth) {
+		        x = containerWidth - tooltipWidth - 2;
+		      }
+		      y = thisElement.getAttribute('y');
+		      y = y - height;
+		      y *= -2;
+		      return {
+		        top: y,
+		        left: x
+		      };
+    		}
+ 		 }
+	});
+	</script>
+</body>
+</html>
