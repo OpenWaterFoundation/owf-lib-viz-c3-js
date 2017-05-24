@@ -22,6 +22,11 @@ See also:
 * [C3 Examples](http://c3js.org/examples.html)
 * [C3 Options](http://c3js.org/reference.html)
 
+## Dataset Limitations
+
+At around six years of data using four different series, approximately 8,760 data points, C3 becomes bogged down when using the subchart and when scrolling around the graph.
+C3 seems to do extremely well with simple, small sets of data.
+
 ## What is a Timeseries Graph
 
 Timeseries, also known as Line Graphs, are used to display quantitative value over a continuous interval or time span. It is most frequently used to show trends and relationships (when grouped with other lines). Line Graphs also help to give a "big picture" over an interval, to see how it has developed over that period.
