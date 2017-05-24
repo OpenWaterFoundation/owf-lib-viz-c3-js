@@ -18,7 +18,7 @@
 	var chart = c3.generate({
 		data: {
 			x: 'Date',	// Specify the key of x values in the data (what is the title of the x values)
-			xFormat: '%m/%d/%Y',	// Set a format to parse string specified as x.
+			xFormat: '%Y-%m-%d',	// Set a format to parse string specified as x.
 			url: 'data-files/small-precip-data.csv',	// Load a CSV or JSON file from a URL or file path from local machine.
 			type: 'line'	// Set chart type of data (line, bar, step, area, etc.).
 		},
