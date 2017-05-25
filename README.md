@@ -8,8 +8,8 @@ A standard development folder structure is recommended. The website development 
 ```
 > C:
 > cd \Users\user
-> mkdir C3
-> cd C3
+> mkdir C3-JS
+> cd C3-JS
 > mkdir git-repos
 > cd git-repos
 > git clone (URL)
@@ -22,10 +22,19 @@ See also:
 * [C3 Examples](http://c3js.org/examples.html)
 * [C3 Options](http://c3js.org/reference.html)
 
+## Data Format RCC-ACIS Precipitation Time Series
+|Date   |StationID 1   |StationID 2   |StationID 3   |StationID X   |
+|:-:|---|---|---|---|
+|1/01/2000   |0.0   |1.0   |0.0   |precipitation amount   |
+|1/02/2000   |0.5   |1.73   |0.2   |precipitation amount   |
+|1/03/2000   |0.26   |0.84   |0.64   |precipitation amount   |
+
+** **Note** the data below each station is the amount of precipitation that occured that day. 
+
 ## Dataset Limitations
 
-At around six years of data using four different series, approximately 8,760 data points, C3 becomes bogged down when using the subchart and when scrolling around the graph.
-C3 seems to do extremely well with simple, small sets of data.
+* At around six years of data using four different series (stations), approximately 8,760 data points, C3 becomes bogged down when using the subchart and when scrolling around the graph.
+* C3 seems to do extremely well with simple, small sets of data.
 
 ## What is a Timeseries Graph
 
