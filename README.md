@@ -14,7 +14,12 @@ A standard development folder structure is recommended. The website development 
 > cd git-repos
 > git clone https://github.com/OpenWaterFoundation/owf-lib-viz-c3-js
 ``` 
-The repository contains multiple folders that include time series examples using different sets of data.
+This repository contains three different folders. Each folder contains an example of how to create a Time Series chart using C3. In order to see each example, download or clone this repository and open up each examples index.html in a web browser of your choosing. For further documentation on each folder refer to the links below:
+
+* [TS-Tool-Large-Data-Example](https://github.com/OpenWaterFoundation/owf-lib-viz-c3-js/tree/master/TS-Tool-Large-Data-Example)
+* [TS-Tool-Small-Data-Example](https://github.com/OpenWaterFoundation/owf-lib-viz-c3-js/tree/master/TS-Tool-Small-Data-Example)
+* [simple-example](https://github.com/OpenWaterFoundation/owf-lib-viz-c3-js/tree/master/simple-example)
+
 ## Additional Documentation
 
 See also:
@@ -31,10 +36,17 @@ See also:
 
 ** **Note** the data below each station is the amount of precipitation that occured that day. 
 
-## Dataset Limitations
+## NOTES
 
 * At around six years of data using four different series (stations), approximately 8,760 data points, C3 becomes bogged down when using the subchart and when scrolling around the graph.
-* C3 seems to do extremely well with simple, small sets of data.
+* C3 seems to do extremely well with simple, small sets of data. 
+* Requires a decent understanding of javascript
+* Requires small amount of code to implement 
+* Provides examples and documentation
+* Open Source
+* Free
+* Has a good release history
+* Actively developed
 
 ## What is a Timeseries Graph
 
