@@ -4,8 +4,7 @@ This example is meant to serve as a base root of how C3 works. It shows some of 
 
 ## File Structure 
 ```
-├── Graph-Review-Example
-│   ├── index.html
+├── simple-example
 │   ├── css
 │   │   ├── c3.min.css
 │   │   ├── style.css
