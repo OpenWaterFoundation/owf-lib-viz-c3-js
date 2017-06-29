@@ -15,41 +15,43 @@
 	<div id="chart"></div>
 	<p>In order to zoom in and out scroll the mouse wheel.</p>
 	<script>
+
+	// create new c3 chart
 	var chart = c3.generate({
 		data: {
-			x: 'Date',
-			xFormat: '%Y-%m-%d',
-			url: 'data-files/large-precip-data.csv',
-			type: 'line'
+			x: 'Date',	// Specify the key of x values in the data (what is the title of the x values)
+			xFormat: '%Y-%m-%d',	// Set a format to parse string specified as x.
+			url: 'data-files/large-precip-data.csv',	// Load a CSV or JSON file from a URL or file path from local machine
+			type: 'line'	// Set chart type (line, bar, step, area, etc.)
 		},
 		axis: {
 			x: {
 				label: {
-					text: 'Date',
-					position: 'outer-center'
+					text: 'Date',	// x axis label
+					position: 'outer-center'	// x axis label position
 				},
-				type: 'timeseries',
+				type: 'timeseries',	// set type of x axis
 				tick: {
-					format: '%Y-%m-%d'
+					format: '%Y-%m-%d'	// format tick values to show year-month-day
 				}
 			},
 			y: {
 				label: {
-					text: 'inches',
-					position: 'outer-middle'
+					text: 'inches',	// y axis label
+					position: 'outer-middle'	// y axis label position
 				} 
 			}
 		},
 		zoom: {
-			enabled: true
+			enabled: true	// enable zooming
 		},
 		subchart: {
-			show: true
+			show: true	// enable subchart
 		},
 		title: {
-			text: 'Precipitation'
+			text: 'Precipitation'	// title of chart/graph
 		},
-		tooltip: {
+		tooltip: {	// function that is called when tooltip is shown. This will make sure the tooltip does not overlap data when being displayed.
 		    position: function(data, width, height, thisElement) {
 		      var containerWidth, element, tooltipWidth, x, y;
 		      element = document.getElementById('chart');
